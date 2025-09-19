@@ -115,5 +115,3 @@ Both assistants are built with **n8n**:
 MIT License – Free for personal and commercial use.
 
 ---
-
-👉 Would you like me to also **create two workflow JSON exports** (Expense + Brochure Assistant) so they can be added under a `/workflows` folder in the repo for easy import into n8n?
