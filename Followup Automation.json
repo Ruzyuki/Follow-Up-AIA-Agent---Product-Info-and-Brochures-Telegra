@@ -1,0 +1,303 @@
+{
+  "name": "Followup Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }} Give output professionally and in proper structured format.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        64,
+        -48
+      ],
+      "id": "0f1e8672-62bd-45af-9040-c038fe15afa7",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        96
+      ],
+      "id": "9a791130-adb3-473d-94ae-a3f14a74bc10",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "ffHJvyUFN0xygeVz",
+          "name": "Google Gemini(PaLM) Api account 3"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        80,
+        528
+      ],
+      "id": "6cc71f17-a270-4af3-8046-24a92af1fb69",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA",
+          "mode": "list",
+          "cachedResultName": "Product Brochures",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Product",
+              "lookupValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "combineFilters": "OR",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        464,
+        96
+      ],
+      "id": "9fba4b47-4eda-44af-9a9d-bca204b22454",
+      "name": "Get Product from Sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "P5Rra5P9BTTPA5uo",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA",
+          "mode": "list",
+          "cachedResultName": "Product Brochures",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Download Link"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        224,
+        160
+      ],
+      "id": "5476a3f2-f1f7-45ae-8002-a7f4dad1bd62",
+      "name": "Get Brochure Download Link",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "P5Rra5P9BTTPA5uo",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA",
+          "mode": "list",
+          "cachedResultName": "Product Brochures",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WerspDdPMqt7GQiy6oAC5eC2u1TDXR7mEmB-idrcGwA/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Principal",
+              "lookupValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        336,
+        96
+      ],
+      "id": "369a2cb7-8db5-4f7a-bcd5-6a45374c0273",
+      "name": "Principle",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "P5Rra5P9BTTPA5uo",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -224,
+        -112
+      ],
+      "id": "1f9e645c-f752-489e-8caa-3332f0bf4d1a",
+      "name": "Telegram Trigger",
+      "webhookId": "df3e8775-1c6f-4d6e-b52a-0a9aac224745",
+      "credentials": {
+        "telegramApi": {
+          "id": "3rZVJqccPXgQGS5Z",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        608,
+        144
+      ],
+      "id": "55982815-273b-4124-89a5-8642b60571d6",
+      "name": "Send a text message",
+      "webhookId": "fcc5837c-3c6b-4f68-8082-188af36607c6",
+      "credentials": {
+        "telegramApi": {
+          "id": "3rZVJqccPXgQGS5Z",
+          "name": "Telegram account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        []
+      ]
+    },
+    "Get Product from Sheet": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Brochure Download Link": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Principle": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3855473a-b9cd-495b-a1f5-a4eecd40b43f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "21ea06756fe09b1a22c06a17d62643309576e5d9b5573e2ecbaf8be2f3b1cc57"
+  },
+  "id": "ORxzrNOyjik219JL",
+  "tags": []
+}
