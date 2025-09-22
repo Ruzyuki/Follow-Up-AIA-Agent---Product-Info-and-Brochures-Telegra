@@ -1,39 +1,9 @@
-Perfect 👍 Since you now have **two workflows** (Expense Assistant + Product Brochure Assistant), I’ll prepare a **GitHub README.md** that documents both clearly in a professional way.
-
----
-
 # 🤖 AI-Powered Telegram Assistants (n8n + Google Gemini + Google Sheets)
 
-This repository contains two **AI-powered Telegram assistants** built using [n8n](https://n8n.io/).
+This repository contains  **AI-powered Telegram assistant** built using [n8n](https://n8n.io/).
 They integrate **Google Gemini** for AI-driven natural language understanding, **Google Sheets** for structured data storage, and **Telegram** as the user interface.
 
----
-
-## 🚀 Project Modules
-
-### 1. 💰 Expense Assistant
-
-A smart expense tracker for **salespeople on the field** to log and query expenses in real-time.
-
-* Log expenses directly via Telegram (e.g., `"Add Shillong Trip with price 30000"`).
-* Append expenses to **Google Sheets** automatically.
-* Query totals (daily/weekly/monthly).
-* Search by category/date/type (e.g., `"Show all travel expenses in September"`).
-* Built to simplify **reimbursement workflows**.
-
-**Example:**
-
-```
-User: Add Lunch at Delhi with price 1500  
-Bot: ✅ I have added Lunch at Delhi with a price of 1500.  
-
-User: What is my total expense this week?  
-Bot: 💰 Your total spend this week is 12,500.  
-```
-
----
-
-### 2. 📄 Product Brochure Assistant
+**📄 Product Brochure Assistant**
 
 An intelligent assistant that retrieves **product details and brochures** for customers/prospects.
 
